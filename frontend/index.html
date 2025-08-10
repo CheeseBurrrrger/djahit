@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djahit - Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#E9E4D4',
+                        'djahit-orange': '#E07A5F',
+                        'text-dark': '#393E30',
+                        'button-green': '#7A8568',
+                        'sage-green': '#8B9D6F',
+                        'text-white' : '#F6F7F3'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream">
+    <!-- Navbar -->
+    <nav class="w-full" style="height: 100px; background-color: #E9E4D4;">
+        <div class="max-w-7xl rounded-[16px] mt-[30px] mx-auto px-6 relative h-full" style="background-color: #F8F7F2;">
+            <!-- Djahit Logo -->
+            <div class="absolute left-12 top-6">
+                <h1 class="text-4xl font-medium" style="color: #E07A5F;">Djahit</h1>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
+                <ul class="flex space-x-12">
+                    <li><a href="#" class="text-base font-medium" style="color: #393E30;">Home</a></li>
+                    <li><a href="#" class="text-base font-medium" style="color: #393E30;">Input Order</a></li>
+                    <li><a href="#" class="text-base font-medium" style="color: #393E30;">Riwayat Order</a></li>
+                    <li><a href="#" class="text-base font-medium" style="color: #393E30;">Reward Point</a></li>
+                </ul>
+            </div>
+            
+            <!-- Register and Login Buttons -->
+            <div class="absolute right-12 top-1/2 transform -translate-y-1/2 flex space-x-4">
+                <button id="registerBtn" class="px-6 py-3 border-2 rounded-lg text-base font-medium transition-all duration-300" 
+                        style="border-color: #7A8568; color: #7A8568; width: 129px; height: 48px; background-color: transparent;">
+                    Register
+                </button>
+                <button id="loginBtn" class="px-6 py-3 rounded-lg text-base font-medium transition-all duration-300" 
+                        style="background-color: #7A8568; color: white; width: 129px; height: 48px; border: 2px solid #7A8568;">
+                    Login
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-full mx-auto px-6 pb-2">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mx-12 max-h-[690px]">
+            <div class="ml-16 mt-[-408px]">
+                <h1 class="text-5xl font-bold mb-8" style="color: #393E30;">
+                    Selamatkan <span style="color: #E07A5F;">Pakaianmu</span>,<br>
+                    Selamatkan <span style="color: #E07A5F;">Bumi</span> Kita
+                </h1>
+                <p class="text-2xl mb-8" style="color: #393E30;">
+                    Platform perbaikan pakaian berbasis komunitas yang berkelanjutan dan mudah diakses.
+                </p>
+                <button class="mt-[60px] text-xl pl-[10px] rounded-full text-white font-medium flex items-center transition-all duration-300 hover:opacity-90 max-w-[223px]" 
+                        style="background-color: #E07A5F;">
+                    Mulai Sekarang
+                    <img src="./assets/img/arrow.svg" alt="" srcset="">
+                </button>
+            </div>
+            <div class="flex justify-center w-lg">
+                <div class="overflow-hidden">
+                    <img src="./assets/img/hero.svg"  
+                         alt="Woman in elegant clothing" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="w-full py-20" style="background-color: #8B9D6F;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Fashion model" class="w-full h-48 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Sewing machine" class="w-full h-48 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Sewing supplies" class="w-full h-48 object-cover rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                         alt="Fabric patterns" class="w-full h-48 object-cover rounded-lg">
+                </div>
+                <div class="text-white">
+                    <h2 class="text-4xl font-bold mb-6">About Us</h2>
+                    <p class="text-lg leading-relaxed">
+                        Djahit adalah <span class="font-semibold">SaaS</span> yang menghubungkan penggunanya dengan komunitas untuk memperbaiki dan menghidupkan kembali pakaian yang rusak agar dapat terpakaiKembali lagi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="w-full py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: #E07A5F;">Our Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 mb-6" style="background-color: #E07A5F; border-radius: 50%;">
+                        <svg class="w-8 h-8 text-white m-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #E07A5F;">Sustainability in fashion</h3>
+                    <p class="text-gray-600 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 mb-6" style="background-color: #E07A5F; border-radius: 50%;">
+                        <svg class="w-8 h-8 text-white m-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #E07A5F;">Empowering Local Tailor</h3>
+                    <p class="text-gray-600 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="w-12 h-12 mb-6" style="background-color: #E07A5F; border-radius: 50%;">
+                        <svg class="w-8 h-8 text-white m-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4" style="color: #E07A5F;">Mengurangi sampah tekstil</h3>
+                    <p class="text-gray-600 text-sm">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDGS Alignment Section -->
+    <section class="w-full py-20" style="background-color: #7A8568;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h2 class="text-4xl font-bold mb-8">SDGS<br>Alignment</h2>
+                </div>
+                <div class="grid grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://via.placeholder.com/60x60/4CAF50/FFFFFF?text=SDG12" alt="SDG 12" class="w-16 h-16">
+                        </div>
+                        <p class="text-white font-medium">SDG 12:</p>
+                        <p class="text-white text-sm">Responsible Consumption</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://via.placeholder.com/60x60/2E7D32/FFFFFF?text=SDG13" alt="SDG 13" class="w-16 h-16">
+                        </div>
+                        <p class="text-white font-medium">SDG 13:</p>
+                        <p class="text-white text-sm">Climate Action</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-white rounded-lg flex items-center justify-center">
+                            <img src="https://via.placeholder.com/60x60/1976D2/FFFFFF?text=SDG8" alt="SDG 8" class="w-16 h-16">
+                        </div>
+                        <p class="text-white font-medium">SDG 8:</p>
+                        <p class="text-white text-sm">Decent Work</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow of Usage Section -->
+    <section class="w-full py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: #E07A5F;">Flow Of Usage</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">1</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Touchpoint entry melalui WhatsApp</h3>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="flex justify-center items-center">
+                    <svg class="w-8 h-8" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">2</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Input kerusakan pakaian</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <svg class="w-8 h-8 transform rotate-90" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Step 6 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">6</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Pengiriman kembali</h3>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="flex justify-center items-center">
+                    <svg class="w-8 h-8 transform rotate-180" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">5</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Tracking status</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <svg class="w-8 h-8 transform rotate-90" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">3</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Estimasi harga dan waktu</h3>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <div class="flex justify-center items-center">
+                    <svg class="w-8 h-8" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 mx-auto mb-4 rounded-full border-4 border-gray-300 flex items-center justify-center">
+                        <span class="text-2xl font-bold" style="color: #E07A5F;">4</span>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="font-semibold mb-2" style="color: #393E30;">Pick-up & repair</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="w-full py-20" style="background-color: #8B9D6F;">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-white">FAQ</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-white rounded-lg p-6 shadow-lg">
+                    <div class="flex items-center justify-between cursor-pointer">
+                        <h3 class="text-lg font-medium" style="color: #393E30;">Apa itu "Djahit"?</h3>
+                        <svg class="w-6 h-6" style="color: #393E30;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4" style="color: #E07A5F;">Djahit</h3>
+                    <p class="text-gray-600 mb-4">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut dolore magna aliqua. Ut enim ad.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #393E30;">Pages</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">About</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Services</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #393E30;">Supported By</h4>
+                    <p class="text-gray-600">Various partners and organizations</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const registerBtn = document.getElementById('registerBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        
+        // Register button hover effects
+        registerBtn.addEventListener('mouseenter', () => {
+            registerBtn.style.backgroundColor = '#7A8568';
+            registerBtn.style.color = 'white';
+        });
+        
+        registerBtn.addEventListener('mouseleave', () => {
+            registerBtn.style.backgroundColor = 'transparent';
+            registerBtn.style.color = '#7A8568';
+        });
+        
+        // Login button hover effects (reverse of register)
+        loginBtn.addEventListener('mouseenter', () => {
+            loginBtn.style.backgroundColor = 'transparent';
+            loginBtn.style.color = '#7A8568';
+            loginBtn.style.borderColor = '#7A8568';
+        });
+        
+        loginBtn.addEventListener('mouseleave', () => {
+            loginBtn.style.backgroundColor = '#7A8568';
+            loginBtn.style.color = 'white';
+            loginBtn.style.borderColor = '#7A8568';
+        });
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
