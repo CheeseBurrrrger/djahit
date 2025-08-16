@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Djahit - Homepage</title>
+    <link rel="icon" type="image/x-icon" href="./ASSETS/img/logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -26,9 +27,9 @@
         }
     </script>
 </head>
-<body class="bg-cream font-sans">
+<body class="bg-cream font-sans" style="overflow-x: hidden;">
     <!-- Navbar -->
-    <nav class="w-[1440px] mx-auto" style="height: 100px; background-color: #E9E4D4;">
+    <nav class="w-full mx-auto" style="height: 100px; background-color: #E9E4D4;">
         <div class="max-w-7xl rounded-[16px] mt-[30px] mx-auto px-2 relative h-full" style="background-color: #F8F7F2;">
             <!-- Djahit Logo -->
             <div class="absolute left-12 top-5">
@@ -60,14 +61,20 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="w-full min-h-[680px] max-h-[500px] flex items-center" style="background-color: #E9E4D4;" id="Home">
+    <section class="w-full min-h-[680px] max-h-[680px] flex items-center relative" style="background-color: #E9E4D4;" id="Home">
+        <img src="./assets/img/Polygon 1.svg" alt="triangle" class="absolute top-[70px] left-[795px]">
+        <img src="./assets/img/Polygon 2.svg" alt="triangle" class="absolute top-[80px] left-[730px]">
+        <img src="./assets/img/Brutalist 55.svg" alt="illustration" class="absolute left-[2px] bottom-[-170px]" id="mustontop">
+        <img src="./assets/img/Brutalist 35.svg" alt="illustration" class="absolute right-[2px] top-[70px]" id="rightcorner">
+        <div class="absolute top-[500px] left-[600px] w-12 h-12 border-[2px] border-[#626A53] rounded-[8px] transform rotate-[6deg]"></div>
+        <div class="absolute top-[550px] left-[500px] w-24 h-24 border-[2px] border-[#626A53] rounded-[16px] transform rotate-[42deg]"></div>
         <div class="max-w-7xl mx-auto py-12">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center space-x-12 ">
                 <!-- Left Content -->
                 <div class="mr-[20px] mt-[-50px]">
                     <h1 class="text-5xl font-bold leading-tight" style="color: #393E30;">
-                        Selamatkan <span style="color: #E07A5F;">Pakaianmu</span>,<br>
-                        Selamatkan <span style="color: #E07A5F;">Bumi</span> Kita
+                        Selamatkan <span style="color: #A85C47;">Pakaianmu</span>,<br>
+                        Selamatkan <span style="color: #A85C47;">Bumi</span> Kita
                     </h1>
                     <p class="text-2xl mt-[24px] text-gray-700 max-w-lg">
                         Platform perbaikan pakaian berbasis komunitas yang berkelanjutan dan mudah diakses.
@@ -84,9 +91,6 @@
                         <img src="./assets/img/hero.png" 
                              alt="Woman in elegant clothing" 
                              class="object-cover w-[600px] mt-[-315px] max-h-[638.999px] shadow-none">
-                        <!-- Decorative elements -->
-                        <div class="absolute -top-4 -left-4 w-20 h-20 border-2 border-djahit-orange rounded-lg opacity-60"></div>
-                        <div class="absolute -bottom-4 -right-4 w-16 h-16 border-2 border-sage-green rounded-lg opacity-40"></div>
                     </div>
                 </div>
             </div>
@@ -95,6 +99,8 @@
 
     <!-- About Us Section -->
     <section class="w-full pt-20 pb-10" style="background-color: #7A8568;">
+        <img src="./assets/img/aboutus-small.svg" alt="triangle" class="absolute bottom-[25px] right-[160px]">
+        <img src="./assets/img/aboutus-large.svg" alt="triangle" class="absolute bottom-[8px] right-[-35px]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-[47px] items-center">
                 <!-- Left - Image Grid -->
@@ -121,7 +127,8 @@
     </section>
 
     <!-- Our Mission Section -->
-    <section class="w-full h-[670px] pt-[92px] mb-10 bg-cream">
+    <section class="w-full h-[670px] pt-[92px] mb-10 bg-cream relative">
+        <img src="./assets/img/Brutalist 56.svg" alt="triangle" class="absolute top-[-30px] left-[-48px]">
         <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-5xl font-bold text-center mt-[35px]" style="color: #A85C47;">Our Mission</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-[95px]">
@@ -285,66 +292,81 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="w-full py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
+    <footer class="w-full py-8 px-10" style="background-color: #E9E4D4;">
+        <div class="w-full mx-auto p-12 rounded-2xl" style="background-color: #F8F7F2;">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Company Info -->
-                <div class="md:col-span-2">
-                    <h3 class="text-3xl font-bold mb-6" style="color: #E07A5F;">Djahit</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                <div class="md:col-span-2 pl-4">
+                    <!-- Logo -->
+                    <div class="flex items-center mb-4">
+                        <img src="./assets/img/footer.svg" alt="djahit logo" class="w-[168px] h-[72px]">
+                    </div>
+                    
+                    <p class="text-[#393E30] mb-4 text-base leading-relaxed max-w-md pt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:bg-djahit-orange hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:bg-djahit-orange hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.348-2.277-.735 0-1.23.505-1.23 1.219v5.236h-2.67V8.867h2.56v1.17h.037c.355-.675 1.227-1.387 2.524-1.387 2.7 0 3.2 1.778 3.2 4.091v3.597zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34V8.867H3.667v7.47z"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600 hover:bg-djahit-orange hover:text-white transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"/>
-                            </svg>
-                        </a>
+                    
+                    <!-- Social Media -->
+                    <div class="mb-6">
+                        <p class="text-gray-700 text-base font-medium mb-3">Follow Our Social Media</p>
+                        <div class="flex space-x-3">
+                            <!-- X/Twitter -->
+                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
+                                <img src="./assets/img/twitter.svg" alt="twitter logo">
+                            </a>
+                            <!-- Instagram -->
+                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
+                                <img src="./assets/img/instagram.svg" alt="instagram logo">
+                            </a>
+                            <!-- Email -->
+                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
+                                <img src="./assets/img/email.svg" alt="email logo">
+                            </a>
+                            <!-- YouTube -->
+                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
+                                <img src="./assets/img/youtube.svg" alt="youtube logo">
+                            </a>
+                            <!-- TikTok -->
+                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
+                                <img src="./assets/img/tiktok.svg" alt="tiktok logo">
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Pages -->
-                <div>
-                    <h4 class="text-xl font-semibold mb-6" style="color: #393E30;">Pages</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#Home" class="text-gray-600 hover:text-djahit-orange transition-colors">Home</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors">Input Order</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors">Riwayat Order</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors">Reward Point</a></li>
+                <div class="pt-8">
+                    <h4 class="text-lg font-semibold mb-4 text-[#A85C47] pt-[20px]">Pages</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Home</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Input Order</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Riwayat Order</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Reward Point</a></li>
                     </ul>
                 </div>
 
                 <!-- Supported By -->
-                <div>
-                    <h4 class="text-xl font-semibold mb-6" style="color: #393E30;">Supported By</h4>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-gray-200 rounded flex items-center justify-center">
-                                <span class="text-xs font-bold text-gray-600">FL</span>
-                            </div>
-                            <span class="text-gray-600 text-sm">Filkom</span>
+                <div class="pt-[52px]">
+                    <h4 class="text-lg font-semibold mb-4 text-[#A85C47]">Supported By</h4>
+                    <div class="flex items-center space-x-3">
+                        <!-- University Logo -->
+                        <div class="flex items-center justify-center w-10 h-10 bg-blue-900 rounded-full">
+                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                            </svg>
                         </div>
-                        <p class="text-gray-500 text-sm">Various partners and organizations</p>
+                        <!-- FILKOM Logo -->
+                        <div class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                            FILKOM
+                        </div>
                     </div>
                 </div>
             </div>
             
             <!-- Bottom Footer -->
-            <div class="border-t border-gray-200 mt-12 pt-8">
+            <div class="border-t border-gray-200 pt-2 pl-4">
                 <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-500 text-sm mb-4 md:mb-0">
-                        © 2024 Djahit. All rights reserved.
-                    </p>
+                    <img src="./assets/img/copyright-footer.svg" alt="footer copyright">
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-500 hover:text-djahit-orange text-sm transition-colors">Privacy Policy</a>
                         <a href="#" class="text-gray-500 hover:text-djahit-orange text-sm transition-colors">Terms of Service</a>
@@ -432,8 +454,9 @@
             loginBtn.style.borderColor = '#7A8568';
         });
 
-        // FAQ Toggle functionality
+        // COMBINED DOMContentLoaded - This is the key fix!
         document.addEventListener('DOMContentLoaded', function() {
+            // FAQ Toggle functionality
             const faqToggles = document.querySelectorAll('.faq-toggle');
             
             faqToggles.forEach(toggle => {
@@ -456,6 +479,34 @@
                     }
                 });
             });
+
+            // Fix for mustontop image - MOVED INSIDE THE SAME DOMContentLoaded
+            const mustontop = document.getElementById('mustontop');
+            console.log('mustontop element found:', mustontop); // Debug log
+            
+            if (mustontop) {
+                // Force styles with !important using cssText
+                mustontop.style.cssText = `
+                    position: fixed !important;
+                    left: 2px !important;
+                    bottom: -170px !important;
+                    z-index: 9999 !important;
+                    pointer-events: none !important;
+                `;
+                
+                console.log('Applied mustontop styles'); // Debug log
+                
+                // Reapply on scroll to prevent any interference
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        mustontop.style.zIndex = '9999';
+                    }, 10);
+                });
+            } else {
+                console.log('mustontop element not found!'); // Debug log
+            }
         });
 
         // Smooth scrolling for anchor links
@@ -530,8 +581,15 @@
             .transition-transform {
                 transition: transform 0.3s ease-in-out;
             }
+
+            /* Force mustontop to stay on top */
+            #mustontop {
+                position: fixed !important;
+                z-index: 9999 !important;
+                pointer-events: none !important;
+            }
         `;
         document.head.appendChild(style);
-    </script>
+</script>
 </body>
 </html>
