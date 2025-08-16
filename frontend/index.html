@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="./ASSETS/img/logo.svg">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -29,36 +30,7 @@
 </head>
 <body class="bg-cream font-sans" style="overflow-x: hidden;">
     <!-- Navbar -->
-    <nav class="w-full mx-auto" style="height: 100px; background-color: #E9E4D4;">
-        <div class="max-w-7xl rounded-[16px] mt-[30px] mx-auto px-2 relative h-full" style="background-color: #F8F7F2;">
-            <!-- Djahit Logo -->
-            <div class="absolute left-12 top-5">
-                <img src="./assets/img/DjahitLogo.svg" alt="Djahit Logo">
-            </div>
-            
-            <!-- Navigation Menu -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
-                <ul class="flex space-x-12">
-                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Home</a></li>
-                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Input Order</a></li>
-                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Riwayat Order</a></li>
-                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Reward Point</a></li>
-                </ul>
-            </div>
-            
-            <!-- Register and Login Buttons -->
-            <div class="absolute right-12 top-1/2 transform -translate-y-1/2 flex space-x-4">
-                <button id="registerBtn" class="px-6 py-3 border-2 rounded-lg text-base font-medium transition-all duration-300" 
-                        style="border-color: #7A8568; color: #7A8568; width: 129px; height: 48px; background-color: transparent;">
-                    Register
-                </button>
-                <button id="loginBtn" class="px-6 py-3 rounded-lg text-base font-medium transition-all duration-300" 
-                        style="background-color: #7A8568; color: white; width: 129px; height: 48px; border: 2px solid #7A8568;">
-                    Login
-                </button>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="w-full min-h-[680px] max-h-[680px] flex items-center relative" style="background-color: #E9E4D4;" id="Home">
@@ -292,174 +264,23 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="w-full py-8 px-10" style="background-color: #E9E4D4;">
-        <div class="w-full mx-auto p-12 rounded-2xl" style="background-color: #F8F7F2;">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Company Info -->
-                <div class="md:col-span-2 pl-4">
-                    <!-- Logo -->
-                    <div class="flex items-center mb-4">
-                        <img src="./assets/img/footer.svg" alt="djahit logo" class="w-[168px] h-[72px]">
-                    </div>
-                    
-                    <p class="text-[#393E30] mb-4 text-base leading-relaxed max-w-md pt-2">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                    </p>
-                    
-                    <!-- Social Media -->
-                    <div class="mb-6">
-                        <p class="text-gray-700 text-base font-medium mb-3">Follow Our Social Media</p>
-                        <div class="flex space-x-3">
-                            <!-- X/Twitter -->
-                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
-                                <img src="./assets/img/twitter.svg" alt="twitter logo">
-                            </a>
-                            <!-- Instagram -->
-                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
-                                <img src="./assets/img/instagram.svg" alt="instagram logo">
-                            </a>
-                            <!-- Email -->
-                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
-                                <img src="./assets/img/email.svg" alt="email logo">
-                            </a>
-                            <!-- YouTube -->
-                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
-                                <img src="./assets/img/youtube.svg" alt="youtube logo">
-                            </a>
-                            <!-- TikTok -->
-                            <a href="#" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-djahit-orange transition-colors">
-                                <img src="./assets/img/tiktok.svg" alt="tiktok logo">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pages -->
-                <div class="pt-8">
-                    <h4 class="text-lg font-semibold mb-4 text-[#A85C47] pt-[20px]">Pages</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Home</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Input Order</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Riwayat Order</a></li>
-                        <li><a href="#" class="text-gray-600 hover:text-djahit-orange transition-colors text-sm">Reward Point</a></li>
-                    </ul>
-                </div>
-
-                <!-- Supported By -->
-                <div class="pt-[52px]">
-                    <h4 class="text-lg font-semibold mb-4 text-[#A85C47]">Supported By</h4>
-                    <div class="flex items-center space-x-3">
-                        <!-- University Logo -->
-                        <div class="flex items-center justify-center w-10 h-10 bg-blue-900 rounded-full">
-                            <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-                            </svg>
-                        </div>
-                        <!-- FILKOM Logo -->
-                        <div class="bg-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                            FILKOM
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Bottom Footer -->
-            <div class="border-t border-gray-200 pt-2 pl-4">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <img src="./assets/img/copyright-footer.svg" alt="footer copyright">
-                    <div class="flex space-x-6">
-                        <a href="#" class="text-gray-500 hover:text-djahit-orange text-sm transition-colors">Privacy Policy</a>
-                        <a href="#" class="text-gray-500 hover:text-djahit-orange text-sm transition-colors">Terms of Service</a>
-                        <a href="#" class="text-gray-500 hover:text-djahit-orange text-sm transition-colors">Cookie Policy</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <div id="footer-container"></div>
     <!-- JavaScript -->
     <script>
-        // Button hover effects
-        const registerBtn = document.getElementById('registerBtn');
-        const loginBtn = document.getElementById('loginBtn');
-        const missionCard1 = document.getElementById('missionCard1');
-        const missionCard1Img = document.getElementById('missionCard1Img');
-        const missionCard1p = document.getElementById('missionCard1p');
-        const missionCard2 = document.getElementById('missionCard2');
-        const missionCard2Img = document.getElementById('missionCard2Img');
-        const missionCard2p = document.getElementById('missionCard2p');
-        const missionCard3 = document.getElementById('missionCard3');
-        const missionCard3Img = document.getElementById('missionCard3Img');
-        const missionCard3p = document.getElementById('missionCard3p');
-        
-        // Register button hover effects
-        registerBtn.addEventListener('mouseenter', () => {
-            registerBtn.style.backgroundColor = '#7A8568';
-            registerBtn.style.color = 'white';
-        });
-        
-        registerBtn.addEventListener('mouseleave', () => {
-            registerBtn.style.backgroundColor = 'transparent';
-            registerBtn.style.color = '#7A8568';
-        });
-        missionCard1.addEventListener('mouseenter', () =>{
-            missionCard1.style.backgroundColor = '#7A8568';
-            missionCard1.style.borderStyle = 'solid';
-            missionCard1.style.borderColor = '#A85C47';
-            missionCard1.style.borderWidth = '1px';
-            missionCard1p.style.color = '#F6F7F3';
-            missionCard1Img.src = "./assets/img/thrift-shop 1 white.png";
-        });
-        missionCard1.addEventListener('mouseleave', () =>{
-            missionCard1.style.backgroundColor = '#E9E4D4';
-            missionCard1p.style.color = '#393E30';
-            missionCard1Img.src = "./assets/img/thrift-shop 1.png";
-        });
-        missionCard2.addEventListener('mouseenter', () =>{
-            missionCard2.style.backgroundColor = '#7A8568';
-            missionCard2.style.borderStyle = 'solid';
-            missionCard2.style.borderColor = '#A85C47';
-            missionCard2.style.borderWidth = '1px';
-            missionCard2p.style.color = '#F6F7F3';
-            missionCard2Img.src = "./assets/img/sewing-machine white.png";
-        });
-        missionCard2.addEventListener('mouseleave', () =>{
-            missionCard2.style.backgroundColor = '#E9E4D4';
-            missionCard2p.style.color = '#393E30';
-            missionCard2Img.src = "./assets/img/sewing-machine 1.png";
-        });
-        missionCard3.addEventListener('mouseenter', () =>{
-            missionCard3.style.backgroundColor = '#7A8568';
-            missionCard3.style.borderStyle = 'solid';
-            missionCard3.style.borderColor = '#A85C47';
-            missionCard3.style.borderWidth = '1px';
-            missionCard3p.style.color = '#F6F7F3';
-            missionCard3Img.src = "./assets/img/garbage-bag white.png";
-        });
-        missionCard3.addEventListener('mouseleave', () =>{
-            missionCard3.style.backgroundColor = '#E9E4D4';
-            missionCard3p.style.color = '#393E30';
-            missionCard3Img.src = "./assets/img/garbage-bag 1.png";
-        });
-        // Login button hover effects
-        loginBtn.addEventListener('mouseenter', () => {
-            loginBtn.style.backgroundColor = 'transparent';
-            loginBtn.style.color = '#7A8568';
-            loginBtn.style.borderColor = '#7A8568';
-        });
-        
-        loginBtn.addEventListener('mouseleave', () => {
-            loginBtn.style.backgroundColor = '#7A8568';
-            loginBtn.style.color = 'white';
-            loginBtn.style.borderColor = '#7A8568';
-        });
-
-        // COMBINED DOMContentLoaded - This is the key fix!
         document.addEventListener('DOMContentLoaded', function() {
-            // FAQ Toggle functionality
-            const faqToggles = document.querySelectorAll('.faq-toggle');
-            
-            faqToggles.forEach(toggle => {
+        // Load components first
+        $('#navbar-container').load('navbar.html');
+        $('#footer-container').load('footer.html');
+        
+        // Wait a bit for components to load, then initialize button effects
+        setTimeout(function() {
+            initializeButtonEffects();
+            initializeMissionCardEffects();
+        }, 100);
+        
+        // Your existing FAQ and mustontop code...
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
                 toggle.addEventListener('click', function() {
                     const faqContent = this.parentElement.querySelector('.faq-content');
                     const arrow = this.querySelector('.faq-arrow');
@@ -507,8 +328,105 @@
             } else {
                 console.log('mustontop element not found!'); // Debug log
             }
-        });
+    });
 
+    // Move button effects to functions
+    function initializeButtonEffects() {
+        const registerBtn = document.getElementById('registerBtn');
+        const loginBtn = document.getElementById('loginBtn');
+        
+        if (registerBtn && loginBtn) {
+            // Register button hover effects
+            registerBtn.addEventListener('mouseenter', () => {
+                registerBtn.style.backgroundColor = '#7A8568';
+                registerBtn.style.color = 'white';
+            });
+            
+            registerBtn.addEventListener('mouseleave', () => {
+                registerBtn.style.backgroundColor = 'transparent';
+                registerBtn.style.color = '#7A8568';
+            });
+            
+            // Login button hover effects
+            loginBtn.addEventListener('mouseenter', () => {
+                loginBtn.style.backgroundColor = 'transparent';
+                loginBtn.style.color = '#7A8568';
+                loginBtn.style.borderColor = '#7A8568';
+            });
+            
+            loginBtn.addEventListener('mouseleave', () => {
+                loginBtn.style.backgroundColor = '#7A8568';
+                loginBtn.style.color = 'white';
+                loginBtn.style.borderColor = '#7A8568';
+            });
+        }
+    }
+
+    function initializeMissionCardEffects() {
+        const missionCard1 = document.getElementById('missionCard1');
+        const missionCard1Img = document.getElementById('missionCard1Img');
+        const missionCard1p = document.getElementById('missionCard1p');
+        const missionCard2 = document.getElementById('missionCard2');
+        const missionCard2Img = document.getElementById('missionCard2Img');
+        const missionCard2p = document.getElementById('missionCard2p');
+        const missionCard3 = document.getElementById('missionCard3');
+        const missionCard3Img = document.getElementById('missionCard3Img');
+        const missionCard3p = document.getElementById('missionCard3p');
+        
+        // Mission Card 1 effects
+        if (missionCard1) {
+            missionCard1.addEventListener('mouseenter', () => {
+                missionCard1.style.backgroundColor = '#7A8568';
+                missionCard1.style.borderStyle = 'solid';
+                missionCard1.style.borderColor = '#A85C47';
+                missionCard1.style.borderWidth = '1px';
+                if (missionCard1p) missionCard1p.style.color = '#F6F7F3';
+                if (missionCard1Img) missionCard1Img.src = "./assets/img/thrift-shop 1 white.png";
+            });
+            
+            missionCard1.addEventListener('mouseleave', () => {
+                missionCard1.style.backgroundColor = '#E9E4D4';
+                if (missionCard1p) missionCard1p.style.color = '#393E30';
+                if (missionCard1Img) missionCard1Img.src = "./assets/img/thrift-shop 1.png";
+            });
+        }
+        
+        // Mission Card 2 effects
+        if (missionCard2) {
+            missionCard2.addEventListener('mouseenter', () => {
+                missionCard2.style.backgroundColor = '#7A8568';
+                missionCard2.style.borderStyle = 'solid';
+                missionCard2.style.borderColor = '#A85C47';
+                missionCard2.style.borderWidth = '1px';
+                if (missionCard2p) missionCard2p.style.color = '#F6F7F3';
+                if (missionCard2Img) missionCard2Img.src = "./assets/img/sewing-machine white.png";
+            });
+            
+            missionCard2.addEventListener('mouseleave', () => {
+                missionCard2.style.backgroundColor = '#E9E4D4';
+                if (missionCard2p) missionCard2p.style.color = '#393E30';
+                if (missionCard2Img) missionCard2Img.src = "./assets/img/sewing-machine 1.png";
+            });
+        }
+        
+        // Mission Card 3 effects
+        if (missionCard3) {
+            missionCard3.addEventListener('mouseenter', () => {
+                missionCard3.style.backgroundColor = '#7A8568';
+                missionCard3.style.borderStyle = 'solid';
+                missionCard3.style.borderColor = '#A85C47';
+                missionCard3.style.borderWidth = '1px';
+                if (missionCard3p) missionCard3p.style.color = '#F6F7F3';
+                if (missionCard3Img) missionCard3Img.src = "./assets/img/garbage-bag white.png";
+            });
+            
+            missionCard3.addEventListener('mouseleave', () => {
+                missionCard3.style.backgroundColor = '#E9E4D4';
+                if (missionCard3p) missionCard3p.style.color = '#393E30';
+                if (missionCard3Img) missionCard3Img.src = "./assets/img/garbage-bag 1.png";
+            });
+        }
+    };
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

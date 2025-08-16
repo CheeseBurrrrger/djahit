@@ -1,153 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Djahit Navbar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'navbar-bg': '#E9E4D4',
-                        'djahit-color': '#E07A5F',
-                        'menu-color': '#393E30',
-                        'button-color': '#7A8568'
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-gray-100">
-    <!-- Navbar Container -->
-    <div class="w-full flex justify-center bg-white">
-        <nav style="width: 1440px; height: 100px; background-color: #E9E4D4; position: relative;">
+<nav class="w-full mx-auto" style="height: 100px; background-color: #E9E4D4;">
+        <div class="max-w-7xl rounded-[16px] mt-[30px] mx-auto px-2 relative h-full" style="background-color: #F8F7F2;">
             <!-- Djahit Logo -->
-            <div style="position: absolute; left: 49px; top: 14px;">
-                <h1 style="font-size: 36px; color: #E07A5F; font-weight: bold; margin: 0;">Djahit</h1>
+            <div class="absolute left-12 top-5">
+                <img src="./assets/img/DjahitLogo.svg" alt="Djahit Logo">
             </div>
             
             <!-- Navigation Menu -->
             <div class="absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2">
-                <ul class="flex space-x-8">
-                    <li><a href="#" style="font-size: 16px; color: #393E30; text-decoration: none;">Home</a></li>
-                    <li><a href="#" style="font-size: 16px; color: #393E30; text-decoration: none;">Input Order</a></li>
-                    <li><a href="#" style="font-size: 16px; color: #393E30; text-decoration: none;">Riwayat Order</a></li>
-                    <li><a href="#" style="font-size: 16px; color: #393E30; text-decoration: none;">Reward Point</a></li>
+                <ul class="flex space-x-12">
+                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Home</a></li>
+                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Input Order</a></li>
+                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Riwayat Order</a></li>
+                    <li><a href="#" class="text-base font-medium hover:text-djahit-orange transition-colors" style="color: #393E30;">Reward Point</a></li>
                 </ul>
             </div>
             
             <!-- Register and Login Buttons -->
-            <div class="absolute right-6 top-1/2 transform -translate-y-1/2 flex space-x-4">
-                <!-- Register Button -->
-                <button style="
-                    width: 129px; 
-                    height: 48px; 
-                    border: 2px solid #7A8568; 
-                    background: transparent; 
-                    color: #7A8568; 
-                    border-radius: 8px; 
-                    font-size: 16px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                " 
-                onmouseover="this.style.backgroundColor='#7A8568'; this.style.color='white';" 
-                onmouseout="this.style.backgroundColor='transparent'; this.style.color='#7A8568';">
+            <div class="absolute right-12 top-1/2 transform -translate-y-1/2 flex space-x-4">
+                <button id="registerBtn" class="px-6 py-3 border-2 rounded-lg text-base font-medium transition-all duration-300" 
+                        style="border-color: #7A8568; color: #7A8568; width: 129px; height: 48px; background-color: transparent;">
                     Register
                 </button>
-                
-                <!-- Login Button -->
-                <button style="
-                    width: 129px; 
-                    height: 48px; 
-                    background-color: #7A8568; 
-                    color: white; 
-                    border: none; 
-                    border-radius: 8px; 
-                    font-size: 16px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                " 
-                onmouseover="this.style.backgroundColor='#6B7559';" 
-                onmouseout="this.style.backgroundColor='#7A8568';">
+                <button id="loginBtn" class="px-6 py-3 rounded-lg text-base font-medium transition-all duration-300" 
+                        style="background-color: #7A8568; color: white; width: 129px; height: 48px; border: 2px solid #7A8568;">
                     Login
                 </button>
             </div>
-        </nav>
-    </div>
-
-    <!-- Sample content to show navbar in context -->
-    <div class="max-w-6xl mx-auto p-8">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4">Welcome to Djahit</h2>
-        <p class="text-gray-600">This is a sample page content to demonstrate the navbar above.</p>
-    </div>
-
-    <!-- Mobile Responsive Version (Hidden on desktop, shown on mobile) -->
-    <div class="block md:hidden w-full bg-navbar-bg px-4 py-4">
-        <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-djahit-color">Djahit</h1>
-            
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="text-menu-color focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
         </div>
-        
-        <!-- Mobile Menu (Initially Hidden) -->
-        <div id="mobile-menu" class="hidden mt-4">
-            <ul class="space-y-3">
-                <li><a href="#" class="block text-menu-color">Home</a></li>
-                <li><a href="#" class="block text-menu-color">Input Order</a></li>
-                <li><a href="#" class="block text-menu-color">Riwayat Order</a></li>
-                <li><a href="#" class="block text-menu-color">Reward Point</a></li>
-            </ul>
-            
-            <div class="mt-4 space-y-2">
-                <button class="w-full py-2 border-2 border-button-color text-button-color rounded-lg">Register</button>
-                <button class="w-full py-2 bg-button-color text-white rounded-lg">Login</button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Hide desktop navbar on mobile and show mobile version
-        function handleResize() {
-            const desktopNav = document.querySelector('nav');
-            const mobileNav = document.querySelector('.md\\:hidden');
-            
-            if (window.innerWidth < 768) {
-                if (desktopNav && desktopNav.parentElement) {
-                    desktopNav.parentElement.style.display = 'none';
-                }
-            } else {
-                if (desktopNav && desktopNav.parentElement) {
-                    desktopNav.parentElement.style.display = 'flex';
-                }
-                if (mobileMenu) {
-                    mobileMenu.classList.add('hidden');
-                }
-            }
-        }
-
-        // Initial check
-        handleResize();
-        
-        // Listen for resize events
-        window.addEventListener('resize', handleResize);
-    </script>
-</body>
-</html>
+    </nav>
