@@ -3,7 +3,7 @@
 
 
 
-## Here are the steps you need to follow to run our code on your device:
+## Here are the steps you need to follow to run our code on your device ->
 
 1. Make sure you have VS Code or your preferred text editor installed.  
 2. Open VS Code, go to the terminal, and run the git clone command using our repository:  
@@ -12,8 +12,11 @@
    ```  
 3. After successfully cloning the repository, go to the Extensions tab and search for "Live Server".  
 > Below is the extension
-![live server extension](liveserver.png)
-![live server extension](image.png)
+
+ 
+>![live server extension](liveserver.png)
+>![live server extension](image.png)
+
 4. Install the Live Server extension.  
 5. Once the extension is installed, you'll see a "Go Live" button at the bottom of the window—click it. 
 ![go live](golive.png)
