@@ -14,8 +14,9 @@
 > Below is the extension
 
  
-![live server extension](liveserver.png)
-![live server extension](image.png)
+>![live server extension](liveserver.png)
+>![live server extension](image.png)
+
 4. Install the Live Server extension.  
 5. Once the extension is installed, you'll see a "Go Live" button at the bottom of the window—click it. 
 ![go live](golive.png)
