@@ -31,7 +31,7 @@
 _That's it, Thank you and i hope you have good day_
 
 <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGV6YnZvOWZzNDhxbXdqdnpmNTFkOW5hczI1a2VoOXF2YmtsMjk4MCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/2x0VePimPaFJDpGZ7H/giphy.gif" style="width: 30%; max-width: 200px; height: auto;" alt="GIF 1" />
+  <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXQ1c3dkbTRqNmRoeHNrcG1ldnRpeTlmaHQyYXlkeWNhbXRramQ2YiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/eIn3M9YLHetZbKICSc/giphy.gif" style="width: 30%; max-width: 200px; height: auto;" alt="GIF 1" />
   
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGJ6Mng5Mmt4MjlvbW1oM29wN3IybjQ2ZjhzYTdlbXlmbzZteDhibSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/NfzERYyiWcXU4/giphy.gif" style="width: 30%; max-width: 200px; height: auto;" alt="Cat says goodbye" />
   
