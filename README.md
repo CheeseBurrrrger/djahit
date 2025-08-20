@@ -12,6 +12,8 @@
    ```  
 3. After successfully cloning the repository, go to the Extensions tab and search for "Live Server".  
 > Below is the extension
+
+ 
 ![live server extension](liveserver.png)
 ![live server extension](image.png)
 4. Install the Live Server extension.  
