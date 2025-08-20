@@ -3,7 +3,7 @@
 
 
 
-## Here are the steps you need to follow to run our code on your device:
+## Here are the steps you need to follow to run our code on your device ->
 
 1. Make sure you have VS Code or your preferred text editor installed.  
 2. Open VS Code, go to the terminal, and run the git clone command using our repository:  
