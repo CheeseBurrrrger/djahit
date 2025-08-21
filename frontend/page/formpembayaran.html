@@ -21,7 +21,8 @@
                         'sage-green': '#8B9D6F',
                         'text-white': '#F6F7F3',
                         'text-radio': '#393E30',
-                        'reminder': '#F5D6CD'
+                        'reminder': '#F5D6CD',
+                        'font-sec': '#414141'
                     },
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
@@ -32,24 +33,16 @@
     </script>
 </head>
 <body class="bg-cream font-sans" style="overflow-x: hidden;">
-    <!-- Navbar -->
     <div id="navbar-container"></div>
-
     <main class="flex-1 px-6 py-8">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Left Column -->
                 <div class="space-y-6">
-                    <!-- Order Details Section -->
                     <div class="bg-section-white rounded-lg p-6 shadow-sm h-[658px]">
-                        <h3 class="text-lg font-normal border-b pb-2 border-[#A3B18A] text-button-green mb-4">Isi Beberapa Detail di Bawah</h3>
-                        
-                        <!-- Media Upload -->
+                        <h3 class="text-lg font-normal border-b pb-2 border-[#A3B18A] text-button-green mb-4">Isi Beberapa Detail di Bawah</h3>                        
                         <div class="mb-6">
                             <h4 class="text-base font-medium text-text-dark mb-2">Media Upload</h4>
-                            <p class="text-sm text-[#6D6D6D] mb-3">Add your documents here.</p>
-                            
-                            <!-- Upload Area -->
+                            <p class="text-sm text-[#6D6D6D] mb-3">Add your documents here.</p>                            
                             <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-djahit-orange transition-colors cursor-pointer" id="uploadArea">
                                 <div class="mb-4">
                                     <svg class="w-12 h-12 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -60,11 +53,8 @@
                                 <p class="text-xs text-gray-500">Max 10 MB files are allowed</p>
                                 <input type="file" id="fileInput" class="hidden" multiple accept=".jpg,.jpeg,.png">
                             </div>
-                            
                             <p class="text-xs text-gray-500 mt-2">Only support .jpg, .jpeg files</p>
                         </div>
-
-                        <!-- Uploaded File Display -->
                         <div class="mb-6">
                             <div class="flex items-center justify-between p-3 bg-white border border-gray-200 rounded-lg">
                                 <div class="flex items-center space-x-3">
@@ -85,8 +75,6 @@
                                 </button>
                             </div>
                         </div>
-
-                        <!-- Warning Message -->
                         <div class="bg-reminder rounded-[8px] w-fit px-4 py-2 mb-6 mx-auto">
                             <div class="flex">
                                 <div class="flex-shrink-0">
@@ -101,8 +89,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Image Upload Slots -->
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                             <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors">
                                 <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -126,8 +112,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Scan Results Section -->
                     <div class="bg-section-white rounded-lg p-6 shadow-sm">
                         <h3 class="text-lg font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Hasil Deskripsi Scan Pakaian</h3>
                         <div class="bg-transparent border border-[#A3B18A] rounded-lg p-4 min-h-[120px]">
@@ -136,39 +120,31 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Payment Details Section -->
                     <div class="bg-section-white rounded-lg p-6 shadow-sm">
-                        <h3 class="text-lg font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Detail Pembayaran</h3>
-                        
+                        <h3 class="text-xl font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Detail Pembayaran</h3>
                         <div class="space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600">Jasa Jahit</span>
-                                <span class="text-gray-900 font-medium">Rp 10.000</span>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-font-sec font-medium pl-4">Jasa Jahit</span>
+                                <span class="text-font-sec font-medium">Rp 10.000</span>
                             </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-600">Ongkos Kirim</span>
-                                <span class="text-gray-900 font-medium">Rp 2.000</span>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-font-sec font-medium pl-4">Ongkos Kirim</span>
+                                <span class="text-font-sec font-medium">Rp 2.000</span>
                             </div>
                             <hr class="border-gray-300">
-                            <div class="flex justify-between items-center font-medium">
-                                <span class="text-gray-900">Total Bayar</span>
+                            <div class="flex justify-between items-center font-medium text-sm">
+                                <span class="text-font-sec font-medium pl-1">Total Bayar</span>
                                 <span class="text-gray-900"></span>
                             </div>
                         </div>
-                        
-                        <div class="mt-4 bg-gray-100 rounded-lg p-4 text-center">
+                        <div class="mt-4 bg-[#E2E7DB] rounded-[12px] p-4 text-center">
                             <span class="text-xl font-bold text-djahit-orange">Rp 12.000,00</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Column -->
                 <div class="space-y-6">
-                    <!-- Order Form -->
                     <div class="bg-section-white rounded-lg py-6 px-12 shadow-sm h-[907px]">
                         <form class="space-y-6">
-                            <!-- Jenis Kerusakan -->
                             <div class="mb-4">
                                 <label class="block text-base font-medium text-text-dark mb-3 pt-2">
                                     Jenis kerusakan*
@@ -192,8 +168,6 @@
                                     </label>
                                 </div>
                             </div>
-
-                            <!-- Deskripsi Jenis Kerusakan -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-2">
                                     Deskripsi jenis kerusakan lainnya
@@ -205,8 +179,6 @@
                                     style="min-height: 48px; overflow-y: hidden;"
                                 ></textarea>
                             </div>
-
-                            <!-- Jenis/Tipe Pakaian -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-3">
                                     Jenis / tipe pakaian*
@@ -230,8 +202,6 @@
                                     </label>
                                 </div>
                             </div>
-
-                            <!-- Deskripsi Jenis/Tipe Kerusakan -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-2">
                                     Deskripsi jenis/tipe kerusakan lainnya
@@ -243,8 +213,6 @@
                                     style="min-height: 48px; overflow-y: hidden;"
                                 ></textarea>
                             </div>
-
-                            <!-- Ukuran Pakaian -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-4">
                                     Ukuran Pakaian*
@@ -255,8 +223,6 @@
                                     class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
                                 >
                             </div>
-
-                            <!-- Lokasi Pick Up -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark  mb-4">
                                     Lokasi Pick Up*
@@ -267,8 +233,6 @@
                                     class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
                                 >
                             </div>
-
-                            <!-- Referensi Warna -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-4">
                                     Referensi warna benang jahitan
@@ -279,8 +243,6 @@
                                     class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
                                 >
                             </div>
-
-                            <!-- Kode Voucher -->
                             <div>
                                 <label class="block text-base font-medium text-text-dark mb-4">
                                     Masukkan kode voucher
@@ -293,37 +255,34 @@
                             </div>
                         </form>
                     </div>
-
-                    <!-- Payment Gateway Selection -->
                     <div class="bg-section-white rounded-lg py-4 px-8 shadow-sm h-[286px]">
-                        <h3 class="text-lg font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Pilih Payment Gateway</h3>
-                        
-                        <!-- Payment Options -->
+                        <h3 class="text-lg font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Pilih Payment Gateway</h3>                        
                         <div class="grid grid-cols-4 gap-2 mb-2">
-                            <!-- Row 1 -->
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bank_Central_Asia.svg/2560px-Bank_Central_Asia.svg.png" alt="BCA" class="h-6">
+                                <img src="../assets/img/qris.svg" alt="qris" class="h-6">
                             </div>
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_dana_blue.svg/2560px-Logo_dana_blue.svg.png" alt="DANA" class="h-6">
+                                <img src="../assets/img/dana.svg" alt="DANA" class="h-6">
                             </div>
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/GoPay_logo.svg/2560px-GoPay_logo.svg.png" alt="GoPay" class="h-6">
-                            </div>
-                            
-                            <!-- Row 2 -->
+                                <img src="../assets/img/gopay.svg" alt="GoPay" class="h-6">
+                            </div>                            
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/id/thumb/5/55/BNI_logo.svg/2560px-BNI_logo.svg.png" alt="BNI" class="h-6">
+                                <img src="../assets/img/bca.svg" alt="BCA" class="h-6">
                             </div>
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Briva.png/2560px-Briva.png" alt="BRIVA" class="h-6">
+                                <img src="../assets/img/bni.svg" alt="BNI" class="h-6">
                             </div>
                             <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Logo_ovo_purple.svg/2560px-Logo_ovo_purple.svg.png" alt="OVO" class="h-6">
+                                <img src="../assets/img/briva.svg" alt="BRIVA" class="h-6">
+                            </div>
+                            <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
+                                <img src="../assets/img/mandiri.svg" alt="mandiri" class="h-6">
+                            </div>
+                            <div class="border h-[38px] w-[110px] border-gray-300 rounded-lg p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors">
+                                <img src="../assets/img/ovo.svg" alt="OVO" class="h-6">
                             </div>
                         </div>
-
-                        <!-- Other Payment Gateway Input -->
                         <div>
                             <label class="block text-sm font-medium text-text-dark mb-2">
                                 Masukkan Payment Gateway Lainnya
@@ -335,8 +294,6 @@
                             >
                         </div>
                     </div>
-
-                    <!-- Action Buttons -->
                     <div class="flex gap-4">
                         <button type="button" class="flex-1 bg-transparent border border-djahit-orange text-djahit-orange py-3 px-6 rounded-lg hover:bg-djahit-orange hover:text-white transition-colors font-medium">
                             Kembali
@@ -349,46 +306,10 @@
             </div>
         </div>
     </main>
-
     <div id="footer-container"></div>
-
     <script>
-        // Button hover effects functions
-        function initializeButtonEffects() {
-            const registerBtn = document.getElementById('registerBtn');
-            const loginBtn = document.getElementById('loginBtn');
-            
-            if (registerBtn && loginBtn) {
-                // Register button hover effects
-                registerBtn.addEventListener('mouseenter', () => {
-                    registerBtn.style.backgroundColor = '#7A8568';
-                    registerBtn.style.color = 'white';
-                });
-                
-                registerBtn.addEventListener('mouseleave', () => {
-                    registerBtn.style.backgroundColor = 'transparent';
-                    registerBtn.style.color = '#7A8568';
-                });
-                
-                // Login button hover effects
-                loginBtn.addEventListener('mouseenter', () => {
-                    loginBtn.style.backgroundColor = '#E9E4D4';
-                    loginBtn.style.color = '#7A8568';
-                    loginBtn.style.borderColor = '#7A8568';
-                });
-                
-                loginBtn.addEventListener('mouseleave', () => {
-                    loginBtn.style.backgroundColor = '#7A8568';
-                    loginBtn.style.color = 'white';
-                    loginBtn.style.borderColor = '#7A8568';
-                });
-            }
-        }
-
-        // Auto-resize textareas
         function setupAutoResizeTextareas() {
             const textareas = document.querySelectorAll('.auto-resize');
-            
             textareas.forEach(textarea => {
                 function autoResize() {
                     textarea.style.height = 'auto';
@@ -398,114 +319,79 @@
                 textarea.addEventListener('input', autoResize);
                 textarea.addEventListener('paste', () => {
                     setTimeout(autoResize, 10);
-                });
-                
-                // Initialize height
+                });                
                 autoResize();
             });
         }
-
-        function initializeMissionCardEffects() {
-            // This function exists but won't be used on this page
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
-            // Load components first
             $('#navbar-container').load('navbar.html', function() {
                 initializeButtonEffects();
             });
-            $('#footer-container').load('footer.html');
-            
-            // Initialize auto-resize textareas
-            setupAutoResizeTextareas();
-            
-            // File upload functionality
+            $('#footer-container').load('footer.html');            
+            setupAutoResizeTextareas();            
             const uploadArea = document.getElementById('uploadArea');
             const fileInput = document.getElementById('fileInput');
-            
             uploadArea.addEventListener('click', () => {
                 fileInput.click();
             });
-            
             uploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 uploadArea.classList.add('border-djahit-orange');
             });
-            
             uploadArea.addEventListener('dragleave', () => {
                 uploadArea.classList.remove('border-djahit-orange');
             });
-            
             uploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
                 uploadArea.classList.remove('border-djahit-orange');
-                
                 const files = e.dataTransfer.files;
                 handleFiles(files);
             });
-            
             fileInput.addEventListener('change', (e) => {
                 handleFiles(e.target.files);
             });
-            
             function handleFiles(files) {
                 for (let file of files) {
                     const validTypes = ['image/jpeg', 'image/jpg'];
                     if (validTypes.includes(file.type) && file.size <= 10 * 1024 * 1024) {
                         console.log('File uploaded:', file.name);
-                        // Here you would handle the file upload
                     } else {
                         alert('Please upload JPG/JPEG files only, maximum 10MB each.');
                     }
                 }
             }
-            
-            // Payment gateway selection
             const paymentOptions = document.querySelectorAll('.border-gray-300');
             paymentOptions.forEach(option => {
                 option.addEventListener('click', () => {
-                    // Remove active class from all options
                     paymentOptions.forEach(opt => {
                         opt.classList.remove('border-djahit-orange', 'bg-orange-50');
                         opt.classList.add('border-gray-300');
-                    });
-                    
-                    // Add active class to clicked option
+                    });                    
                     option.classList.remove('border-gray-300');
                     option.classList.add('border-djahit-orange', 'bg-orange-50');
                 });
             });
-            
-            // Form submission
             const form = document.querySelector('form');
             if (form) {
                 form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    // Basic validation
+                    e.preventDefault();                    
                     const damageType = document.querySelector('input[name="damage_type"]:checked');
                     const clothingType = document.querySelector('input[name="clothing_type"]:checked');
                     const size = document.querySelector('input[placeholder="Inputan Pengguna"]').value;
                     const location = document.querySelectorAll('input[placeholder="Inputan Pengguna"]')[1].value;
-                    
                     if (!damageType || !clothingType || !size.trim() || !location.trim()) {
                         alert('Mohon lengkapi semua field yang wajib diisi (*)');
                         return;
-                    }
-                    
-                    // Here you would normally send the data to your server
+                    }                    
                     console.log('Payment submitted with:', {
                         damageType: damageType.value,
                         clothingType: clothingType.value,
                         size: size,
                         location: location
                     });
-                    
                     alert('Pembayaran berhasil diproses! (Ini hanya prototype)');
                 });
-            }
-            
-            // Add scroll effect to navbar
+            }            
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('nav');
                 if (navbar) {
@@ -516,8 +402,6 @@
                     }
                 }
             });
-
-            // Add custom styles
             const style = document.createElement('style');
             style.textContent = `
                 @keyframes fadeIn {
