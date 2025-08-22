@@ -116,10 +116,10 @@
     <div id="footer-container"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            $('#navbar-container').load('navbar.html', function() {
+            $('#navbar-container').load('loginnavbar.html', function() {
                 initializeButtonEffects();
             });
-            $('#footer-container').load('footer.html');            
+            $('#footer-container').load('loginfooter.html');            
             const passwordToggle = document.querySelector('input[type="password"] + div button');
             const passwordInput = document.querySelector('input[type="password"]');
             if (passwordToggle && passwordInput) {
