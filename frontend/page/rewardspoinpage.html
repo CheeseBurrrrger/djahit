@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djahit - Pembayaran</title>
+    <link rel="icon" type="image/x-icon" href="../ASSETS/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#E9E4D4',
+                        'section-white' : '#F4F2E9',
+                        'djahit-orange': '#E07A5F',
+                        'text-dark': '#A85C47',
+                        'button-green': '#7A8568',
+                        'sage-green': '#8B9D6F',
+                        'text-white': '#F6F7F3',
+                        'text-radio': '#393E30',
+                        'reminder': '#F5D6CD',
+                        'font-sec': '#414141'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream font-sans" style="overflow-x: hidden;">
+    <div id="navbar-container"></div>
+    <div class="bg-section-white w-[1268px] rounded-2xl mx-auto mt-12 px-6 py-8">
+        <div class="mx-auto pl-8">
+            <h2 class="text-base font-medium text-button-green mb-8 pb-4 pt-4 border-b border-[#A3B18A]">Dapatkan Reward dengan Cara di Bawah</h2>            
+            <div class="flex items-start justify-center mb-8">
+                <div class="flex flex-col items-center text-center max-w-[280px]">
+                    <div class="w-12 h-12 bg-button-green text-white rounded-full flex items-center justify-center font-semibold mb-4 text-lg">
+                        1
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Donasikan baju yang sudah tidak dapat diperbaiki untuk disalurkan kepada tempat daur ulang tekstil atau sekolah (20pts)
+                    </p>
+                </div>
+                <div class="flex flex-col items-center text-center max-w-[280px]">
+                    <div class="w-12 h-12 bg-button-green text-white rounded-full flex items-center justify-center font-semibold mb-4 text-lg">
+                        2
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Gunakan jasa kami untuk memperbaiki baju kamu (10pts)
+                    </p>
+                </div>                
+                <div class="flex flex-col items-center text-center max-w-[280px]">
+                    <div class="w-12 h-12 bg-button-green text-white rounded-full flex items-center justify-center font-semibold mb-4 text-lg">
+                        3
+                    </div>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Ajak masyarakat umum lain untuk menjadi mitra jasa jahit kami (50pts)
+                    </p>
+                </div>
+            </div>            
+            <div class="bg-[#A3B18A] mx-auto w-[1082px] border border-gray-300 rounded-lg p-4 flex items-start space-x-3">
+                <div class="flex-shrink-0 mt-1">
+                    <div class="w-[24px] h-[24px] rounded-full flex items-center justify-center">
+                        <img src="../assets/img/reminder.svg" alt="">
+                    </div>
+                </div>
+                <p class="text-sm text-radio leading-relaxed">
+                    Untuk konfirmasi salah satu kegiatan tersebut kami membutuhkan foto dan deskripsi kegiatan yang anda lakukan sebagai metode validasi kami. Setelah terkonfirmasi maka poin reward akan masuk ke profile anda dan dapat ditukarkan menjadi hadiah menarik!!
+                </p>
+            </div>
+        </div>
+    </div>
+    <main class="px-6 py-8">
+        <div class="w-[1268px] mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-section-white rounded-2xl p-6 shadow-sm h-[658px]">
+                        <h3 class="text-lg font-normal border-b pb-2 border-[#A3B18A] text-button-green mb-4">Isi Beberapa Detail di Bawah</h3>                        
+                        <div class="mb-6">
+                            <h4 class="text-base font-medium text-[#0B0B0B] mb-2">Media Upload</h4>
+                            <p class="text-sm text-[#6D6D6D] mb-3">Add your documents here.</p>                            
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-djahit-orange transition-colors cursor-pointer" id="uploadArea">
+                                <div class="mx-auto my-auto">
+                                    <img src="../assets/img/backup.svg" alt="cloud vector" class="mx-auto">
+                                </div>
+                                <p class="text-gray-600 mb-2">Drag your file(s) or <span class="text-button-green font-medium cursor-pointer hover:underline">browse</span></p>
+                                <p class="text-xs text-gray-500">Max 10 MB files are allowed</p>
+                                <input type="file" id="fileInput" class="hidden" multiple accept=".jpg,.jpeg,.png">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Only support .jpg, .jpeg files</p>
+                        </div>
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between p-3 bg-transparent border border-[#D0D6DA] rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-8 h-8 bg-blue-100 rounded flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium text-gray-900">Foto Pakaian Rusak - .jpeg</p>
+                                        <p class="text-xs text-gray-500">200 KB</p>
+                                    </div>
+                                </div>
+                                <button class="text-gray-400 hover:text-gray-600">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-reminder rounded-[8px] w-fit px-4 py-2 mb-6 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img src="../assets/img/reminder.svg" alt="reminder vector">
+                                </div>
+                                <div class="ml-3 my-auto">
+                                    <p class="text-xs text-text-radio">
+                                        Berikan foto pakaianmu tampak depan, belakang dan poin letak kerusakan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 justify-items-center mb-6 h-[108px]">
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-section-white rounded-2xl p-6 shadow-sm mb-6">
+                        <h3 class="text-lg font-medium border-b-[0.5px] border-[#A3B18A] text-button-green mb-4">Masukkan Deskripsi Scan Pakaian</h3>
+                        <div class="bg-section-white border-[0.5px] border-[#A3B18A] rounded-lg p-4">
+                            <p class="text-sm text-[#8C897F] leading-relaxed">
+                                Baju berbahan katun ini mengalami kerusakan berupa lubang berukuran kecil hingga sedang pada bagian kain. Kerusakan tersebut cukup terlihat dan mempengaruhi tampilan keseluruhan pakaian, sehingga tidak lagi tampak sempurna saat dikenakan. Namun, secara umum kain masih dalam kondisi yang cukup baik, nyaman, dan dapat dipakai, sehingga baju ini masih tetap bisa digunakan.
+                            </p>
+                            <p class="text-sm text-[#8C897F] leading-relaxed mt-3">
+                                Untuk menutup kerusakan tersebut beberapa opsi perbaikan yang bisa dilakukan: Lubang dapat dijahit kembali dengan teknik jahit sederhana agar serat kain tidak semakin terurai dan tampilan menjadi lebih rapi. Jika ingin mempertahankan nilai estetika, bagian yang bolong juga bisa ditambal dengan pola patchwork menggunakan kain bermotif atau warna kontras, sehingga bukan hanya menutup lubang, tetapi juga memberi sentuhan gaya unik pada pakaian. Alternatif lain adalah menggunakan jahitan feston dengan benang dekoratif, sehingga area yang diperbaiki justru menjadi aksen menarik.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button type="button" class="flex-1 bg-transparent border-2 border-djahit-orange text-djahit-orange py-3 px-6 rounded-lg hover:bg-djahit-orange hover:text-white transition-all font-medium">
+                            Kembali
+                        </button>
+                        <button type="button" class="flex-1 bg-djahit-orange text-white py-3 px-6 rounded-lg hover:bg-opacity-90 transition-all font-medium">
+                            Kirim
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            $('#navbar-container').load('navbar.html');
+            $('#footer-container').load('footer.html');            
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('border-djahit-orange');
+            });
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('border-djahit-orange');
+            });
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('border-djahit-orange');
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+            function handleFiles(files) {
+                for (let file of files) {
+                    const validTypes = ['image/jpeg', 'image/jpg'];
+                    if (validTypes.includes(file.type) && file.size <= 10 * 1024 * 1024) {
+                        console.log('File uploaded:', file.name);
+                        alert('File berhasil diupload: ' + file.name);
+                    } else {
+                        alert('Hanya file JPG/JPEG dengan maksimal 10MB yang diperbolehkan.');
+                    }
+                }
+            }
+            const uploadSlots = document.querySelectorAll('.aspect-square');
+            uploadSlots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    fileInput.click();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
