@@ -20,11 +20,9 @@
 4. Install the Live Server extension.  
 5. Once the extension is installed, you'll see a "Go Live" button at the bottom of the window—click it. 
 ![go live](golive.png)
-<<<<<<< HEAD
+
 6. When the Live Server starts running, you will be automatically directed to the *login.html* page.  
-=======
-6. When the Live Server starts running, you will be automatically directed to the *rewardspoinpage.html* page.  
->>>>>>> frontend/rewardspoinpage
+
 7. The page should then appear exactly as shown in the image provided below.
 
 
