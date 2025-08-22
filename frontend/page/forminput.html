@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djahit - Input Order</title>
+    <link rel="icon" type="image/x-icon" href="../ASSETS/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#E9E4D4',
+                        'section-white' : '#F4F2E9',
+                        'djahit-orange': '#E07A5F',
+                        'text-dark': '#A85C47',
+                        'button-green': '#7A8568',
+                        'sage-green': '#8B9D6F',
+                        'text-white': '#F6F7F3',
+                        'text-radio': '#393E30',
+                        'reminder': '#F5D6CD'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream font-sans" style="overflow-x: hidden;">
+    <div id="navbar-container"></div>
+    <main class="flex-1 px-6 py-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="bg-section-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-lg font-normal border-b pb-2 border-[#A3B18A] text-button-green mb-4">Isi Beberapa Detail di Bawah</h3>                        
+                        <div class="mb-6 text-right">
+                            <h4 class="text-base font-medium text-text-dark mb-2 text-left">Media Upload</h4>
+                            <p class="text-sm text-[6D6D6D] mb-3  text-left">Add your documents here.</p>                            
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-djahit-orange transition-colors cursor-pointer" id="uploadArea">
+                                <div class="mb-4">
+                                    <svg class="w-12 h-12 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-600 mb-2">Drag your file(s) or <span class="text-button-green font-medium cursor-pointer hover:underline">browse</span></p>
+                                <p class="text-xs text-gray-500">Max 10 MB files are allowed</p>
+                                <input type="file" id="fileInput" class="hidden" multiple accept=".pdf">
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 text-left">Only support .pdf files</p>                            
+                            <button type="button" class="mt-4 text-right bg-button-green text-white px-6 py-2 rounded-md hover:opacity-90 transition-opacity">
+                                Simpan
+                            </button>
+                        </div>
+                        <div class="bg-reminder rounded-[8px] w-fit px-4 py-2  mb-6 mx-auto">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <img src="../assets/img/reminder.svg" alt="himbauan vector">
+                                </div>
+                                <div class="ml-3 my-auto">
+                                    <p class="text-sm  text-radio">
+                                        Berikan foto pakainmu tampak depan, belakang dan poin letak kerusakan
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 justify-items-center mb-6 h-[108px]">
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                            <div class="aspect-square border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center cursor-pointer hover:border-djahit-orange transition-colors w-[108px]">
+                                <img src="../assets/img/img-vector.svg" alt="img vector">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-section-white rounded-lg p-6 shadow-sm">
+                        <h3 class="text-lg font-semibold text-button-green mb-4 border-b-[0.5px] border-solid border-[#A3B18A] pb-2">Hasil Deskripsi Scan Pakaian</h3>
+                        <div class="bg-transparent border border-[#A3B18A] rounded-lg p-4 min-h-[120px] flex items-center justify-center">
+                            <p class="text-[#69675F] text-center">Hasil deskripsi akan muncul di sini setelah gambar terupload.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-section-white rounded-lg p-6 shadow-sm">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-3">
+                                Jenis kerusakan*
+                            </label>
+                            <div class="grid grid-cols-4 gap-3 w-fit">
+                                <label class="flex items-center justify-start space-x-2 cursor-pointer">
+                                    <input type="radio" name="damage_type" value="sobek" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Sobek</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="damage_type" value="kancing_hilang" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Kancing Hilang</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="damage_type" value="resleting_rusak" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Resleting Rusak</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="damage_type" value="lainnya" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Lainnya</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Deskripsi jenis kerusakan lainnya
+                            </label>
+                            <textarea 
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent resize-none h-fit"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-3">
+                                Jenis / tipe pakaian*
+                            </label>
+                            <div class="grid grid-cols-4 gap-3 w-fit">
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="clothing_type" value="baju" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Baju</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="clothing_type" value="celana" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Celana</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="clothing_type" value="outer" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Outer</span>
+                                </label>
+                                <label class="flex items-center space-x-2 cursor-pointer">
+                                    <input type="radio" name="clothing_type" value="lainnya" class="text-djahit-orange focus:ring-djahit-orange">
+                                    <span class="text-sm text-radio">Lainnya</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Deskripsi jenis/tipe kerusakan lainnya
+                            </label>
+                            <textarea 
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent resize-none h-20"
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Ukuran Pakaian*
+                            </label>
+                            <input 
+                                type="text"
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Lokasi Pick Up*
+                            </label>
+                            <input 
+                                type="text"
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Referensi warna benang jahitan
+                            </label>
+                            <input 
+                                type="text"
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
+                            >
+                        </div>
+                        <div>
+                            <label class="block text-base font-medium text-text-dark mb-2">
+                                Masukkan kode voucher
+                            </label>
+                            <input 
+                                type="text"
+                                placeholder="Inputan Pengguna"
+                                class="w-full px-4 py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent"
+                            >
+                        </div>
+                    </form>
+                </div>
+                <div class="flex gap-4 pt-6 col-start-2">
+                    <button type="button" class="flex-1 bg-transparent border border-djahit-orange text-djahit-orange py-3 px-6 rounded-lg hover:bg-djahit-orange hover:text-white transition-colors font-medium">
+                        Kembali
+                    </button>
+                    <button type="submit" class="flex-1 bg-djahit-orange text-white py-3 px-6 rounded-lg hover:bg-cream hover:text-djahit-orange hover:border-djahit-orange hover:border transition-opacity font-medium">
+                        Konfirmasi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load components first
+            $('#navbar-container').load('navbar.html');
+            $('#footer-container').load('footer.html');            
+            const uploadArea = document.getElementById('uploadArea');
+            const fileInput = document.getElementById('fileInput');
+            uploadArea.addEventListener('click', () => {
+                fileInput.click();
+            });
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.classList.add('border-djahit-orange');
+            });
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.classList.remove('border-djahit-orange');
+            });
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.classList.remove('border-djahit-orange');
+                const files = e.dataTransfer.files;
+                handleFiles(files);
+            });
+            fileInput.addEventListener('change', (e) => {
+                handleFiles(e.target.files);
+            });
+            function handleFiles(files) {
+                for (let file of files) {
+                    if (file.type === 'application/pdf' && file.size <= 10 * 1024 * 1024) {
+                        console.log('File uploaded:', file.name);
+                    } else {
+                        alert('Please upload PDF files only, maximum 10MB each.');
+                    }
+                }
+            }            
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();                
+                const damageType = document.querySelector('input[name="damage_type"]:checked');
+                const clothingType = document.querySelector('input[name="clothing_type"]:checked');
+                const size = document.querySelector('input[placeholder="Inputan Pengguna"]').value;
+                const location = document.querySelectorAll('input[placeholder="Inputan Pengguna"]')[1].value;
+                if (!damageType || !clothingType || !size.trim() || !location.trim()) {
+                    alert('Mohon lengkapi semua field yang wajib diisi (*)');
+                    return;
+                }                
+                console.log('Form submitted with:', {
+                    damageType: damageType.value,
+                    clothingType: clothingType.value,
+                    size: size,
+                    location: location
+                });
+                alert('Pesanan berhasil dikonfirmasi! (Ini hanya prototype)');
+            });            
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('nav');
+                if (navbar) {
+                    if (window.scrollY > 100) {
+                        navbar.classList.add('shadow-lg');
+                    } else {
+                        navbar.classList.remove('shadow-lg');
+                    }
+                }
+            });
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(30px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                .animate-fade-in {
+                    animation: fadeIn 0.8s ease-out forwards;
+                }
+                
+                /* Focus states for better accessibility */
+                input:focus, textarea:focus {
+                    box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.1);
+                }
+                
+                button:focus {
+                    box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.1);
+                }
+                
+                /* Smooth transitions */
+                input, textarea, button {
+                    transition: all 0.2s ease-in-out;
+                }
+                
+                /* Custom radio button styling */
+                input[type="radio"]:checked {
+                    background-color: #E07A5F;
+                    border-color: #E07A5F;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
