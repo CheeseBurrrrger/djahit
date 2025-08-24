@@ -171,7 +171,6 @@ def health_check():
 @app.route("/webhook", methods=["GET", "POST"])
 def webhook():
     if request.method == "GET":
-        # Webhook verification
         mode = request.args.get("hub.mode")
         token = request.args.get("hub.verify_token")
         challenge = request.args.get("hub.challenge")
@@ -201,7 +200,6 @@ def webhook():
                             if not from_number:
                                 continue
                                 
-                            # Get contact name
                             name = "Customer"
                             contacts = value.get("contacts", [])
                             if contacts and "profile" in contacts[0]:
@@ -228,7 +226,6 @@ def webhook():
 def handle_text_message(from_number, message, name):
     message_body = message["text"]["body"].lower().strip()
     
-    # Check if message is a number (queue number)
     if message_body.isdigit():
         queue_number = message_body
         response = f"✅ Terima kasih! Sistem sedang mengecek status antrean nomor *{queue_number}*\n\n"
@@ -236,7 +233,6 @@ def handle_text_message(from_number, message, name):
         send_text_message(from_number, response)
         return
     
-    # Handle specific keywords
     keywords_responses = {
         "website": lambda: send_website_link(from_number),
         "web": lambda: send_website_link(from_number),
@@ -248,13 +244,11 @@ def handle_text_message(from_number, message, name):
         "queue": lambda: send_queue_check_instruction(from_number),
     }
     
-    # Check for keywords
     for keyword, action in keywords_responses.items():
         if keyword in message_body:
             action()
             return
     
-    # Default response - show welcome menu
     send_welcome_menu(from_number, name)
 
 def handle_interactive_message(from_number, message):
@@ -274,16 +268,13 @@ def handle_interactive_message(from_number, message):
     
     elif "list_reply" in interactive:
         list_id = interactive["list_reply"]["id"]
-        # Handle list selections (if you add list menus later)
         send_text_message(from_number, "Fitur ini akan segera tersedia. Silakan gunakan menu tombol untuk saat ini.")
 
 if __name__ == "__main__":
-    # Check environment variables
     required_vars = [WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN, VERIFY_TOKEN]
     if not all(required_vars):
-        logger.error("Missing required environment variables!")
+        print("Missing required environment variables!")
         print("Please set: WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN, VERIFY_TOKEN")
-        exit(1)
     
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=False, host="0.0.0.0", port=port)
