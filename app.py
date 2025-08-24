@@ -58,7 +58,7 @@ def send_welcome_menu(to_number, name):
             "header": {
                 "type": "image",
                 "image": {
-                    "link": "https://i.imgur.com/8nDrSzm.jpeg" 
+                    "link": "https://i.imgur.com/2thSJby.png" 
                 }
             },
             "body": {
