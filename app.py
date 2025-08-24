@@ -222,7 +222,14 @@ def webhook():
             return jsonify({"status": "error"}), 500
 
     return jsonify({"error": "Method not allowed"}), 405
-
+@app.route("/test", methods=["GET"])
+def test():
+    return jsonify({
+        "status": "working",
+        "verify_token": VERIFY_TOKEN,
+        "port": os.environ.get("PORT", "5000"),
+        "all_env_vars": dict(os.environ)
+    })
 def handle_text_message(from_number, message, name):
     message_body = message["text"]["body"].lower().strip()
     
