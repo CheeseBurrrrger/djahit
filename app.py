@@ -1,10 +1,8 @@
 import os
 from flask import Flask, request, jsonify
 import requests
-from dotenv import load_dotenv
 import logging
 
-load_dotenv()
 
 app = Flask(__name__)
 
@@ -17,6 +15,10 @@ WHATSAPP_ACCESS_TOKEN = os.getenv("WHATSAPP_ACCESS_TOKEN")
 VERIFY_TOKEN = os.getenv("VERIFY_TOKEN")
 YOUR_WEBSITE_URL = os.getenv("YOUR_WEBSITE_URL", "https://djahit.vercel.app/")
 
+print(f"Environment variables loaded:")
+print(f"VERIFY_TOKEN: {VERIFY_TOKEN}")
+print(f"WHATSAPP_PHONE_NUMBER_ID: {'Set' if WHATSAPP_PHONE_NUMBER_ID else 'Not set'}")
+print(f"WHATSAPP_ACCESS_TOKEN: {'Set' if WHATSAPP_ACCESS_TOKEN else 'Not set'}")
 def send_payload(to_number, payload_data):
     headers = {
         "Authorization": f"Bearer {WHATSAPP_ACCESS_TOKEN}",
@@ -174,7 +176,11 @@ def webhook():
         mode = request.args.get("hub.mode")
         token = request.args.get("hub.verify_token")
         challenge = request.args.get("hub.challenge")
-
+        logger.info(f"Verification attempt:")
+        logger.info(f"  Mode: {mode}")
+        logger.info(f"  Received token: {token}")
+        logger.info(f"  Expected token: {VERIFY_TOKEN}")
+        logger.info(f"  Challenge: {challenge}")
         if mode == "subscribe" and token == VERIFY_TOKEN:
             logger.info("Webhook verified successfully")
             return challenge, 200
