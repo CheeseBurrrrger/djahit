@@ -218,7 +218,7 @@
                         </svg>
                     </div>
                     <div class="faq-content pt-6 overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0;">
-                        <p class="text-[#F1F3ED] text-lg lg:text-xl leading-relaxed">Platform yang memungkinkan Anda untuk memperbaiki pakaian dengan mudah melalui jaringan penjahit terpercaya.</p>
+                        <p class="text-[#F1F3ED] text-lg lg:text-xl leading-relaxed">Bisa, anda dapat menuliskan permintaan untuk jahitan khusus pada kolom yang sudah disediakan</p>
                     </div>
                 </div>
             </div>
@@ -227,25 +227,20 @@
     <div id="footer-container"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        // Mobile menu functionality
         $('#navbar-container').load('frontend/page/guestnavbar.html');
         $('#footer-container').load('frontend/page/footer.html');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Close mobile menu when clicking outside
+            });            
             document.addEventListener('click', function(event) {
                 if (!mobileMenuBtn.contains(event.target) && !mobileMenu.contains(event.target)) {
                     mobileMenu.classList.add('hidden');
                 }
             });
         }
-        
         setTimeout(function() {
             initializeButtonEffects();
             initializeMissionCardEffects();
@@ -267,9 +262,7 @@
                         }
                     }
                 });
-            });
-            
-            // Only apply desktop-specific styles on desktop
+            });            
             if (window.innerWidth >= 1024) {
                 const mustontop = document.getElementById('mustontop');
                 if (mustontop) {

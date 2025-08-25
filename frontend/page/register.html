@@ -106,7 +106,7 @@
                     </form>
                 </div>
                 <div class="p-[-100px]">
-                    <div class="w-full h-full">
+                    <div class="w-full auto">
                         <img src="../assets/img/registrasi.svg" alt="ilustrasi registrasi">
                     </div>
                 </div>
@@ -167,6 +167,7 @@
                     }
                     console.log('Registration attempt:', { fullName, phone, email, password, termsAccepted });
                     alert('fungsi registrasi saat ini belom kami buat karena masih berupa prototype');
+                    window.location.href = "../../index.html"
                 });
             }
             window.addEventListener('scroll', () => {
@@ -191,23 +192,16 @@
                         transform: translateY(0);
                     }
                 }
-                
                 .animate-fade-in {
                     animation: fadeIn 0.8s ease-out forwards;
                 }
-                
-                /* Focus states for better accessibility */
                 input:focus, button:focus {
                     box-shadow: 0 0 0 3px rgba(224, 122, 95, 0.1);
                 }
-                
-                /* Custom checkbox styling */
                 input[type="checkbox"]:checked {
                     background-color: #E07A5F;
                     border-color: #E07A5F;
                 }
-                
-                /* Smooth transitions */
                 input, button, checkbox {
                     transition: all 0.2s ease-in-out;
                 }
