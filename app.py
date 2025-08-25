@@ -129,7 +129,7 @@ Terima kasih telah mempercayai Djahit! 🙏"""
     return send_text_message(to_number, message)
 
 def send_queue_check_instruction(to_number):
-    message = """📋 *CEK STATUS ANTREAN*
+    message = """📋 *CEK STATUS ANTREAN* (mohon maaf untuk saat ini layanan belum tersedia, COMING SOON ASAP)
 
 Untuk mengecek status antrean Anda, silakan kirim nomor antrean dalam format angka.
 
@@ -146,8 +146,8 @@ Jam Operasional:
 Senin - Sabtu: 08.00 - 17.00 WIB
 Minggu: 09.00 - 15.00 WIB
 
-📍 Alamat: [Isi alamat toko Anda]
-📞 Telepon: [Isi nomor telepon toko]
+📍 Alamat: Jl. Veteran No.10-11, Ketawanggede, Kec. Lowokwaru, Kota Malang, Jawa Timur 65145
+📞 Telepon: +1 (555) 146-5080
 
 Untuk informasi lengkap dan booking online:
 {YOUR_WEBSITE_URL}
