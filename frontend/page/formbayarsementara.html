@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djahit - Pembayaran</title>
+    <link rel="icon" type="image/x-icon" href="../../frontend/assets/img/logo.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#E9E4D4',
+                        'section-white' : '#F4F2E9',
+                        'djahit-orange': '#E07A5F',
+                        'text-dark': '#A85C47',
+                        'button-green': '#7A8568',
+                        'sage-green': '#8B9D6F',
+                        'text-white': '#F6F7F3',
+                        'text-radio': '#393E30',
+                        'reminder': '#F5D6CD',
+                        'font-sec': '#414141'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cream font-sans" style="overflow-x: hidden;">
+    <div id="navbar-container"></div>
+    <main class="flex-1 px-4 md:px-6 py-6 md:py-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+                <div class="space-y-6">
+                    <div class="bg-section-white rounded-lg p-4 md:p-6 shadow-sm">
+                        <h3 class="text-base md:text-lg font-medium text-button-green mb-3 border-b border-[#A3B18A] pb-2">
+                            Uploaded Images
+                        </h3>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-3" id="imageGallery">
+                            <!-- Images will be populated here -->
+                        </div>
+                    </div>
+                    <div class="bg-section-white rounded-lg p-4 md:p-6 shadow-sm">
+                      <h3 class="text-base md:text-lg font-semibold text-button-green mb-4 border-b-[0.5px] border-solid border-[#A3B18A] pb-2">
+                          Hasil Deskripsi Scan Pakaian
+                      </h3>
+                      <div id="analysisResult" class="bg-transparent border border-[#A3B18A] rounded-lg p-4 min-h-[100px] md:min-h-[120px]">
+                          <p class="text-[#69675F] text-center text-sm md:text-base">Loading analysis results...</p>
+                      </div>
+                    </div>
+                    <div class="bg-section-white rounded-lg p-4 md:p-6 shadow-sm">
+                        <h3 class="text-base md:text-xl font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Detail Pembayaran</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-xs md:text-sm">
+                                <span class="text-font-sec font-medium pl-2 md:pl-4">Jasa Jahit</span>
+                                <span class="text-font-sec font-medium">Rp 10.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-xs md:text-sm">
+                                <span class="text-font-sec font-medium pl-2 md:pl-4">Ongkos Kirim</span>
+                                <span class="text-font-sec font-medium">Rp 2.000</span>
+                            </div>
+                            <hr class="border-gray-300">
+                            <div class="flex justify-between items-center font-medium text-xs md:text-sm">
+                                <span class="text-font-sec font-medium pl-1">Total Bayar</span>
+                                <span class="text-gray-900"></span>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-[#E2E7DB] rounded-[12px] p-3 md:p-4 text-center">
+                            <span class="text-lg md:text-xl font-bold text-djahit-orange">Rp 12.000,00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-section-white rounded-lg py-4 md:py-6 px-6 md:px-12 shadow-sm">
+                        <form class="space-y-4 md:space-y-6" id="paymentForm">
+                            <div class="mb-4">
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-3 pt-2">
+                                    Jenis kerusakan*
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-2 md:gap-4">
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="damage_type" value="sobek" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Sobek</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="damage_type" value="kancing_hilang" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Kancing Hilang</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="damage_type" value="resleting_rusak" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Resleting Rusak</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="damage_type" value="lainnya" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Lainnya</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2">
+                                    Deskripsi jenis kerusakan lainnya
+                                </label>
+                                <textarea 
+                                    name="damage_description"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent resize-none auto-resize text-xs md:text-sm"
+                                    rows="1"
+                                    style="min-height: 48px; overflow-y: hidden;"
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-3">
+                                    Jenis / tipe pakaian*
+                                </label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-2 md:gap-4">
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="clothing_type" value="baju" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Baju</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="clothing_type" value="celana" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Celana</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="clothing_type" value="outer" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Outer</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 cursor-pointer">
+                                        <input type="radio" name="clothing_type" value="lainnya" class="text-djahit-orange accent-[#E07A5F] focus:ring-djahit-orange">
+                                        <span class="text-xs md:text-sm text-text-radio">Lainnya</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2">
+                                    Deskripsi jenis/tipe kerusakan lainnya
+                                </label>
+                                <textarea 
+                                    name="clothing_description"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent resize-none auto-resize text-xs md:text-sm"
+                                    rows="1"
+                                    style="min-height: 48px; overflow-y: hidden;"
+                                ></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2 md:mb-4">
+                                    Ukuran Pakaian*
+                                </label>
+                                <input 
+                                    type="text"
+                                    name="size"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent text-xs md:text-sm"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2 md:mb-4">
+                                    Lokasi Pick Up*
+                                </label>
+                                <input 
+                                    type="text"
+                                    name="location"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent text-xs md:text-sm"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2 md:mb-4">
+                                    Referensi warna benang jahitan
+                                </label>
+                                <input 
+                                    type="text"
+                                    name="thread_color"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent text-xs md:text-sm"
+                                >
+                            </div>
+                            <div>
+                                <label class="block text-sm md:text-base font-medium text-text-dark mb-2 md:mb-4">
+                                    Masukkan kode voucher
+                                </label>
+                                <input 
+                                    type="text"
+                                    name="voucher_code"
+                                    placeholder="Inputan Pengguna"
+                                    class="w-full px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent text-xs md:text-sm"
+                                >
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bg-section-white rounded-lg py-4 px-4 md:px-8 shadow-sm">
+                        <h3 class="text-base md:text-lg font-medium text-button-green mb-4 border-b border-[#A3B18A] pb-2">Pilih Payment Gateway</h3>                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4">
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="qris">
+                                <img src="../assets/img/qris.svg" alt="qris" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="dana">
+                                <img src="../assets/img/dana.svg" alt="DANA" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="gopay">
+                                <img src="../assets/img/gopay.svg" alt="GoPay" class="h-4 md:h-6">
+                            </div>                            
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="bca">
+                                <img src="../assets/img/bca.svg" alt="BCA" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="bni">
+                                <img src="../assets/img/bni.svg" alt="BNI" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="briva">
+                                <img src="../assets/img/briva.svg" alt="BRIVA" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="mandiri">
+                                <img src="../assets/img/mandiri.svg" alt="mandiri" class="h-4 md:h-6">
+                            </div>
+                            <div class="border h-[38px] border-gray-300 rounded-lg p-2 md:p-3 flex items-center justify-center hover:border-djahit-orange cursor-pointer transition-colors payment-option" data-payment="ovo">
+                                <img src="../assets/img/ovo.svg" alt="OVO" class="h-4 md:h-6">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs md:text-sm font-medium text-text-dark mb-2">
+                                Masukkan Payment Gateway Lainnya
+                            </label>
+                            <input 
+                                type="text"
+                                name="custom_payment"
+                                id="customPayment"
+                                placeholder="Inputan Pengguna"
+                                class="w-full h-[40px] md:h-[46px] px-3 md:px-4 py-2 md:py-3 bg-transparent border border-[#AFB2C3] rounded-lg focus:outline-none focus:ring-2 focus:ring-djahit-orange focus:border-transparent text-xs md:text-sm"
+                            >
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+                        <button type="button" class="flex-1 bg-transparent border border-djahit-orange text-djahit-orange py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-djahit-orange hover:text-white transition-colors font-medium text-sm md:text-base" onclick="goBack()">
+                            Kembali
+                        </button>
+                        <button type="submit" form="paymentForm" class="flex-1 bg-djahit-orange text-white py-2 md:py-3 px-4 md:px-6 rounded-lg hover:bg-cream hover:text-djahit-orange hover:border hover:border-djahit-orange transition-all font-medium text-sm md:text-base">
+                            Pembayaran
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-container"></div>
+    <script src="../assets/js/formbayar.js"></script>
+
+</body>
+</html>
